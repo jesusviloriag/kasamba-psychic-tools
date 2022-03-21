@@ -1,3 +1,23 @@
+# Example Usage:
+
+For the Fortune Cookie:
+
+```
+https://kasamba-psychic-tools.herokuapp.com/api/fortune-cookie
+```
+
+For Zoltar:
+
+```
+https://kasamba-psychic-tools.herokuapp.com/api/zoltar?query=hello this is a question
+```
+
+For the Horoscope:
+
+```
+https://kasamba-psychic-tools.herokuapp.com/api/horoscope-daily/aries
+```
+
 # kasambaPsychicTools
 
 This application was generated using JHipster 7.7.0, you can find documentation and help at [https://www.jhipster.tech](https://www.jhipster.tech).
