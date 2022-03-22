@@ -31,6 +31,7 @@ a {
     padding: 1rem;
     .card {
       padding: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.05);
     }
     .view-routes {
       height: 100%;
@@ -256,6 +257,11 @@ make sure browsers use the pointer cursor for anchors, even with no href
 
 a:hover {
   cursor: pointer;
+  color: #892788;
+}
+
+a {
+  color: #f745fa;
 }
 
 .hand {
