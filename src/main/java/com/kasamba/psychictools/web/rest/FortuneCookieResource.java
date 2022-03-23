@@ -1,10 +1,15 @@
 package com.kasamba.psychictools.web.rest;
 
 import com.kasamba.psychictools.domain.FortuneCookie;
+import com.kasamba.psychictools.domain.HoroscopeLink;
 import com.kasamba.psychictools.repository.FortuneCookieRepository;
 import com.kasamba.psychictools.web.rest.errors.BadRequestAlertException;
+import io.micrometer.core.instrument.util.IOUtils;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -218,6 +223,25 @@ public class FortuneCookieResource {
         if (fortunePage.hasContent()) {
             fortuneCookie = Optional.ofNullable(fortunePage.getContent().get(0));
         }
+        return ResponseUtil.wrapOrNotFound(fortuneCookie);
+    }
+
+    /**
+     * {@code GET  /zoltar/:text : get an inquiry from Zoltar
+     *
+     * @param text your inquiry for Zoltar.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the fortuneCookie, or with status {@code 404 (Not Found)}.
+     */
+    @GetMapping("/zoltar/{text}")
+    public ResponseEntity<FortuneCookie> getZoltarMessage(@PathVariable String text) throws IOException {
+        log.debug("REST request to get Horoscope for : {}", text);
+
+        Optional<FortuneCookie> fortuneCookie = null;
+
+        FortuneCookie fortuneCookie1 = new FortuneCookie();
+        fortuneCookie1.setText("Greetings, my name is Zoltar, you sent me this text: " + text);
+        fortuneCookie = Optional.ofNullable(fortuneCookie1);
+
         return ResponseUtil.wrapOrNotFound(fortuneCookie);
     }
 }

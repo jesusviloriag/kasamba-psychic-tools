@@ -307,6 +307,13 @@
             <artifactId>postgresql</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>LATEST</version>
+        </dependency>
+
+
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
 
