@@ -7,20 +7,36 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
-        Added the entity FortuneCookie.
+        Added the entity App.
     -->
-    <changeSet id="20220323000309-1" author="jhipster">
-        <createTable tableName="fortune_cookie">
+    <changeSet id="20220413114443-1" author="jhipster">
+        <createTable tableName="app">
             <column name="id" type="bigint">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="text" type="varchar(255)">
+            <column name="name" type="varchar(255)">
                 <constraints nullable="false" />
+            </column>
+            <column name="codename" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="banid_android" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="banid_ios" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="logo" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="logo_content_type" type="varchar(255)">
+                <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
     </changeSet>
 
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
 
 </databaseChangeLog>

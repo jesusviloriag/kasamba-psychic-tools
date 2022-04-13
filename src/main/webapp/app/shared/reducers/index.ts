@@ -14,6 +14,10 @@ import passwordReset from 'app/modules/account/password-reset/password-reset.red
 import fortuneCookie from 'app/entities/fortune-cookie/fortune-cookie.reducer';
 // prettier-ignore
 import horoscopeLink from 'app/entities/horoscope-link/horoscope-link.reducer';
+// prettier-ignore
+import app from 'app/entities/app/app.reducer';
+// prettier-ignore
+import appPromo from 'app/entities/app-promo/app-promo.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 const rootReducer = {
@@ -28,6 +32,8 @@ const rootReducer = {
   settings,
   fortuneCookie,
   horoscopeLink,
+  app,
+  appPromo,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 };
