@@ -95,6 +95,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api/fortune-cookie").permitAll()
             .antMatchers("/api/zoltar").permitAll()
             .antMatchers("/api/horoscope-daily/**").permitAll()
+            .antMatchers("/api/app-promos").permitAll()
+            .antMatchers("/api/apps").permitAll()
             .antMatchers("/management/health").permitAll()
             .antMatchers("/management/health/**").permitAll()
             .antMatchers("/management/info").permitAll()
