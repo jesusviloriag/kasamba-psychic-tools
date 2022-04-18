@@ -222,8 +222,10 @@ public class AppPromoResource {
         log.debug("REST request to get AppPromos of " + codename);
         List<AppPromo> page = appPromoRepository.findByApp_CodenameLikeAndDateEquals(codename, LocalDate.now());
 
-        Page page1 = new PageImpl(page);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page1);
-        return ResponseEntity.ok().headers(headers).body(page);
+        if (page.size() < 1) {
+            page = null;
+        }
+
+        return ResponseEntity.ok().body(page);
     }
 }
