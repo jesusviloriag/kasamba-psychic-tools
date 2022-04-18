@@ -221,9 +221,11 @@ public class AppPromoResource {
     public ResponseEntity<List<AppPromo>> getTodayPromos(@PathVariable String codename) {
         log.debug("REST request to get AppPromos of " + codename);
         List<AppPromo> page = appPromoRepository.findByApp_CodenameLikeAndDateEquals(codename, LocalDate.now());
+
         if (page.size() < 1) {
             page = null;
         }
+
         return ResponseEntity.ok().body(page);
     }
 }
