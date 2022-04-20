@@ -209,5 +209,4 @@ public class UserResource {
             .headers(HeaderUtil.createAlert(applicationName, "A user is deleted with identifier " + login, login))
             .build();
     }
-    
 }
